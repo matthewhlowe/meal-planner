@@ -1,3 +1,13 @@
+.card {
+  border: 2px solid #ccc;
+  padding: 16px;
+  margin: 16px;
+  border-radius: 5px;
+  width: calc(100% - 32px);
+  height: calc(100% - 32px);
+  box-sizing: border-box;
+}
+
 .circularButton {
   border-radius: 50%;
   width: 36px;
