@@ -1,4 +1,4 @@
-import MealCard from "@/components/mealCard";
+import MealCard from "@/components/MealCard";
 import { mockMeals } from "@/mocks";
 
 export default function Home() {

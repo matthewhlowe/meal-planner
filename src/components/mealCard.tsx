@@ -1,4 +1,5 @@
 import type { Meal } from "@/types";
+import styles from "./MealCard.module.css";
 
 interface MealCardProps {
     meal: Meal; 
@@ -24,6 +25,10 @@ export default function MealCard({ meal }: MealCardProps) {
           <li key={index}>{ingredient}</li>
         ))}
       </ul>
+      <div style={{ display: "flex", justifyContent: "space-between" }}>
+        <button className={styles.circularButton}>&#x2715;</button>
+        <button className={styles.circularButton}>&#x2713;</button>
+      </div>
     </div>
   );
 }
