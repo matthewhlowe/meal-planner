@@ -1,6 +1,5 @@
 .card {
   border: 2px solid #ccc;
-  padding: 16px;
   margin: 16px;
   border-radius: 5px;
   width: calc(100% - 32px);
@@ -24,4 +23,18 @@
 
 .circularButton:hover {
   background: #ddd;
+}
+
+.inlineList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.inlineList li {
+  display: inline;
+}
+
+.inlineList li:not(:last-child)::after {
+  content: ", ";
 }

@@ -8,16 +8,19 @@ interface MealCardProps {
 export default function MealCard({ meal }: MealCardProps) {
   return (
     <div className={styles.card}>
-      <p>{meal.type}</p>
-      <h2>{meal.name}</h2>
-      <ul>
-        {meal.ingredients.map((ingredient, index) => (
-          <li key={index}>{ingredient}</li>
-        ))}
-      </ul>
-      <div style={{ display: "flex", justifyContent: "space-between" }}>
-        <button className={styles.circularButton}>&#x2715;</button>
-        <button className={styles.circularButton}>&#x2713;</button>
+      <img src={meal.image} alt={meal.name} style={{ width: "100%"}} />
+      <div style={{ padding: "0 16px"}}>
+        <p>{meal.type}</p>
+        <h2>{meal.name}</h2>
+        <ul className={styles.inlineList} style={{ flexShrink: 1, overflowY: "hidden", textOverflow: "ellipsis"}}>
+          {meal.ingredients.map((ingredient, index) => (
+            <li key={index}>{ingredient}</li>
+          ))}
+        </ul>
+        <div style={{ display: "flex", justifyContent: "space-between" }}>
+          <button className={styles.circularButton}>&#x2715;</button>
+          <button className={styles.circularButton}>&#x2713;</button>
+        </div>
       </div>
     </div>
   );

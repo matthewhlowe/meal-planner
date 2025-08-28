@@ -5,4 +5,5 @@ export interface Meal {
   name: string;
   type: MealType;
   ingredients: string[];
+  image?: string
 }

@@ -6,6 +6,7 @@ export const mockMeals: Meal[] = [
     name: "Pancakes",
     type: "breakfast",
     ingredients: ["flour", "milk", "eggs", "sugar", "baking powder"],
+    image: "/pancakes.webp",
   },
   {
     id: 2,
