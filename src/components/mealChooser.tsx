@@ -41,9 +41,11 @@ export default function MealChooser() {
         ) : (
             <>
                 <h2>Chosen Meals:</h2>
+                <ul>
                 {chosenMeals.map((meal) => (
-                    <p key={meal.id}>{meal.name}</p>
+                    <li key={meal.id}>{meal.name}</li>
                 ))}
+                </ul>
             </>
         )}
         </>
