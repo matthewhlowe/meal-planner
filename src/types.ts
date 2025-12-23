@@ -7,3 +7,8 @@ export interface Meal {
   ingredients: string[];
   image?: string
 }
+
+export interface MenuItem {
+  text: string;
+  onClick: () => void;
+}
