@@ -1,3 +1,5 @@
+"use client";
+
 import type { Meal } from "@/types";
 import styles from "./MealCard.module.css";
 
@@ -6,6 +8,15 @@ interface MealCardProps {
 }
 
 export default function MealCard({ meal }: MealCardProps) {
+
+  const handleAddClick = () => {
+    console.log(`Added ${meal.name} to the meal plan.`);
+  }
+
+  const handlePassClick = () => {
+    console.log(`Passed on ${meal.name}.`);
+  }
+
   return (
     <div className={styles.card}>
       <img src={meal.image} alt={meal.name} style={{ width: "100%"}} />
@@ -18,8 +29,8 @@ export default function MealCard({ meal }: MealCardProps) {
           ))}
         </ul>
         <div style={{ display: "flex", justifyContent: "space-between" }}>
-          <button className={styles.circularButton}>&#x2715;</button>
-          <button className={styles.circularButton}>&#x2713;</button>
+          <button className={styles.circularButton} onClick={handlePassClick}>&#x2715;</button>
+          <button className={styles.circularButton} onClick={handleAddClick}>&#x2713;</button>
         </div>
       </div>
     </div>
