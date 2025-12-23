@@ -1,6 +1,4 @@
-import type { Meal } from "./types";
-
-export const mockMeals: Meal[] = [
+export const mockMeals = [
   {
     id: 1,
     name: "Pancakes",

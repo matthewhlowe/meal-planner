@@ -5,8 +5,6 @@ import React, { useState, useEffect } from "react";
 import type { Meal } from "@/types";
 import MealCard from "./mealCard";
 
-import { mockMeals } from "@/mocks";
-
 export default function MealChooser() {
     const [meals, setMeals] = useState<Meal[]>([]);
     
@@ -15,9 +13,15 @@ export default function MealChooser() {
     const [chosenMeals, setChosenMeals] = useState<Meal[]>([]);
 
     useEffect(() => {
-        const meals = mockMeals; // replace with fetch
+        const fetchMeals = async () => {
+            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/meals`);
+            const data = await response.json();
+            return data as Meal[];
+        }
 
-        setMeals(meals);
+        fetchMeals().then((meals) => {
+            setMeals(meals);
+        });
         setCurrentMealIndex(0);
     }, []);
 
