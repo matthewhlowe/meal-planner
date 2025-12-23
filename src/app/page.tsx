@@ -1,8 +1,7 @@
-import MealCard from "@/components/MealCard";
-import { mockMeals } from "@/mocks";
+import MealChooser from "@/components/mealChooser";
 
 export default function Home() {
   return <>
-  <MealCard meal={mockMeals[0]} />
+  <MealChooser />
   </>;
 }

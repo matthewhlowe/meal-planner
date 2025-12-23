@@ -5,16 +5,18 @@ import styles from "./MealCard.module.css";
 
 interface MealCardProps {
     meal: Meal; 
+    addMeal: (meal: Meal) => void;
+    passMeal: () => void;
 }
 
-export default function MealCard({ meal }: MealCardProps) {
+export default function MealCard({ meal, addMeal, passMeal }: MealCardProps) {
 
   const handleAddClick = () => {
-    console.log(`Added ${meal.name} to the meal plan.`);
+    addMeal(meal);
   }
 
   const handlePassClick = () => {
-    console.log(`Passed on ${meal.name}.`);
+    passMeal();
   }
 
   return (
