@@ -5,6 +5,7 @@ import { useState } from "react";
 import MealChooser from "@/components/mealChooser";
 import type { MenuItem } from "@/types";
 import Menu from "@/components/Menu";
+import AddMeal from "@/components/AddMeal";
 
 export default function Home() {
     const [menuChoice, setMenuChoice] = useState<string | null>(null);
@@ -15,7 +16,7 @@ export default function Home() {
   ];
 
   const components: { [key: string]: React.ReactNode } = {
-    add: <div>Add Meal Component Placeholder</div>,
+    add: <AddMeal />,
     choose: <MealChooser />
   };
 
